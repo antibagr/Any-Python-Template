@@ -14,6 +14,8 @@ isort = "5.12.0"
 flake8 = "6.1.0"
 mypy = "1.7.0"
 bandit = {extras = ["toml"], version = "1.7.5"}
+pytest-cov = "^4.1.0"
+coverage = "^7.3.2"
 
 [tool.black]
 line-length = 100
