@@ -1,0 +1,75 @@
+[tool.poetry]
+name = "TEMPLATE_NAME"
+version = "0.0.1"
+description = "TEMPLATE_DESCRIPTION"
+authors = ["TEMPLATE_AUTHOR <TEMPLATE_AUTHOR_EMAIL>"]
+maintainers = ["TEMPLATE_AUTHOR <TEMPLATE_AUTHOR_EMAIL>"]
+
+[tool.poetry.dependencies]
+python = "^3.12.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "23.11.0"
+isort = "5.12.0"
+flake8 = "6.1.0"
+mypy = "1.7.0"
+bandit = {extras = ["toml"], version = "1.7.5"}
+
+[tool.black]
+line-length = 100
+
+[tool.autopep8]
+max_line_length = 100
+in-place = true
+recursive = true
+aggressive = 3
+select = ["E203", "W503"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+wrap_length = 100
+multi_line_output = 3
+combine_as_imports = true
+force_alphabetical_sort_within_sections = true
+overwrite_in_place = true
+skip_glob = []
+
+[tool.mypy]
+plugins = []
+python_version = "3.11"
+follow_imports = "silent"
+warn_return_any = true
+warn_redundant_casts = true
+warn_unused_configs = true
+warn_unused_ignores = true
+check_untyped_defs = true
+no_implicit_reexport = true
+namespace_packages = true
+exclude = []
+
+[[tool.mypy.overrides]]
+module = []
+ignore_missing_imports = true
+
+[tool.bandit]
+skips = [
+    "B311" # Standard pseudo-random generators are not suitable for security/cryptographic purposes
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "strict"
+pythonpath = ["."]
+python_files = ["test_*.py", "tests/units/*.py"]
+
+[tool.coverage.run]
+source = ["app"]
+
+[tool.coverage.report]
+exclude_lines = [
+    # Skip any pass lines such as may be used for @abstractmethod.
+    "pass",
+
+    # Don't complain if tests don't hit defensive assertion code.
+    "raise NotImplementedError",
+]
