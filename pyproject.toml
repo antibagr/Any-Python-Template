@@ -6,7 +6,7 @@ authors = ["TEMPLATE_AUTHOR <TEMPLATE_AUTHOR_EMAIL>"]
 maintainers = ["TEMPLATE_AUTHOR <TEMPLATE_AUTHOR_EMAIL>"]
 
 [tool.poetry.dependencies]
-python = "^3.11.0"
+python = "3.10.11"
 
 [tool.poetry.group.dev.dependencies]
 black = "23.11.0"
@@ -14,9 +14,9 @@ isort = "5.12.0"
 flake8 = "6.1.0"
 mypy = "1.7.0"
 bandit = {extras = ["toml"], version = "1.7.5"}
-pytest-cov = "^4.1.0"
-coverage = "^7.3.2"
-pytest-asyncio = "^0.21.1"
+pytest-cov = {extras = ["toml"], version = "^4.1.0"}
+coverage = {extras = ["toml"], version = "^7.3.2"}
+pytest-asyncio = "0.21.1"
 
 [tool.black]
 line-length = 100

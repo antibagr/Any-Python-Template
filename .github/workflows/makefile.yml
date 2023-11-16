@@ -11,7 +11,7 @@ jobs:
       - name: Install poetry
         run: pipx install poetry
         # Reference: https://github.com/actions/setup-python/tree/main
-      - uses: actions/setup-python@v4.7.1
+      - uses: actions/setup-python@v4
         with:
           python-version-file: 'pyproject.toml'
           cache: 'poetry'
