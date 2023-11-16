@@ -1,6 +1,6 @@
 # Windows does not support BuildKit yet, so we need to use the old syntax
 # Reference: https://github.com/moby/buildkit/issues/616
-FROM python:3.12.0-slim
+FROM python:3.11.0-slim
 
 ENV PIP_DISABLE_PIP_VERSION_CHECK=1 \
     PYTHONDONTWRITEBYTECODE=1 \

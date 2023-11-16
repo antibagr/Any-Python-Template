@@ -2,7 +2,7 @@
 
 # Source: https://medium.com/@albertazzir/blazing-fast-python-docker-builds-with-poetry-a78a66f5aed0
 # The builder image, used to build the virtual environment
-FROM python:3.12.0-slim as builder
+FROM python:3.11.0-slim as builder
 
 RUN pip install poetry
 
@@ -20,7 +20,7 @@ COPY pyproject.toml poetry.lock ./
 RUN --mount=type=cache,target=$POETRY_CACHE_DIR poetry install --no-interaction --no-ansi --no-root --only main
 
 # The runtime image, used to just run the code provided its virtual environment
-FROM python:3.12.0-slim as runtime
+FROM python:3.11.0-slim as runtime
 
 ENV VIRTUAL_ENV=/app/.venv \
     PATH="/app/.venv/bin:$PATH"
