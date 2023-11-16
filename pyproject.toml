@@ -1,12 +1,12 @@
 [tool.poetry]
-name = "TEMPLATE_NAME"
+name = "app"
 version = "0.0.1"
 description = "TEMPLATE_DESCRIPTION"
 authors = ["TEMPLATE_AUTHOR <TEMPLATE_AUTHOR_EMAIL>"]
 maintainers = ["TEMPLATE_AUTHOR <TEMPLATE_AUTHOR_EMAIL>"]
 
 [tool.poetry.dependencies]
-python = "3.10.11"
+python = "3.11.4"
 
 [tool.poetry.group.dev.dependencies]
 black = "23.11.0"
@@ -14,9 +14,10 @@ isort = "5.12.0"
 flake8 = "6.1.0"
 mypy = "1.7.0"
 bandit = {extras = ["toml"], version = "1.7.5"}
-pytest-cov = {extras = ["toml"], version = "^4.1.0"}
-coverage = {extras = ["toml"], version = "^7.3.2"}
 pytest-asyncio = "0.21.1"
+flake8-comments = "0.1.2"
+flake8-print = "5.0.0"
+coverage = "7.3.2"
 
 [tool.black]
 line-length = 100

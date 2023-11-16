@@ -6,7 +6,7 @@ jobs:
   ci:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.1.1
+      - uses: actions/checkout@v3
 
       - name: Install poetry
         run: pipx install poetry
@@ -23,10 +23,10 @@ jobs:
           make tests-units
 
       - name: Coverage Badge
-        uses: tj-actions/coverage-badge-py@v2.0.3
+        uses: tj-actions/coverage-badge-py@v2
 
       - name: Verify Changed files
-        uses: tj-actions/verify-changed-files@v16.1.1
+        uses: tj-actions/verify-changed-files@v16
         id: verify-changed-files
         with:
           files: coverage.svg
