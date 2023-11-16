@@ -10,7 +10,7 @@ help: ## Display this help screen
 .PHONY: help
 
 install: ## Install project dependencies
-	poetry install --no-interaction --no-ansi
+	poetry install --no-interaction --no-ansi --no-root
 .PHONY: install
 
 format: ## Format the source code
@@ -42,7 +42,7 @@ compose-down: ## Stop the development Django server with docker-compose
 
 tests-units: ## Run unit tests
 	poetry run coverage run -m pytest -s ./tests/units
-	poetry run coverage report  --precision=2 -m
+	poetry run coverage report --precision=2 --fail-under=75
 .PHONY: tests-units
 
 tests-integrations: ## Run integration tests
